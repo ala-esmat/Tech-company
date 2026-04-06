@@ -14,3 +14,7 @@ cd
 - IoT
 - Networking
 - blockchain
+
+## locel development
+
+Open index.html in your browser
