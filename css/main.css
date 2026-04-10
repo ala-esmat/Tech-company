@@ -38,6 +38,7 @@ html {
 
 body {
     font-family: 'Space Grotesk', sans-serif;
+    font-display: swap;
     text-transform: capitalize;
 }
 
@@ -1398,7 +1399,7 @@ header nav .form i {
 
 @media (max-width: 991px) {
     .subscribe p {
-        margin: 30px 0 0;
+        margin: 30px 0 20px;
         text-align: center;
     }
 
@@ -1498,6 +1499,10 @@ header nav .form i {
     margin-top: 100px;
 }
 
+.contact .content .info h4:last-of-type i {
+    color: deepskyblue;
+}
+
 @media (max-width: 767px) {
     .contact .content .info h4 {
         margin-top: 0;
@@ -1516,14 +1521,43 @@ header nav .form i {
     width: fit-content;
 }
 
+.contact .content .info .phone:nth-of-type(2) {
+    text-transform: lowercase;
+}
+
+.contact .content .info .phone i,
+.contact .content .info .mail i {
+    color: #000;
+    margin-right: 8px;
+    transition: 0.3s;
+}
+
+.contact .content .info .phone i:hover {
+    color: var(--outline-color);
+}
+
+.contact .content .info .mail i:hover {
+    color: rgba(255, 123, 0, 0.663);
+}
+
+.contact .content .info .mail a {
+    text-transform: lowercase;
+    text-decoration: none;
+    color: var(--outline-color);
+}
+
+.contact .content .info .mail a:hover {
+    text-decoration: underline solid black;
+}
+
+.contact .content .info .mail i:hover {
+    color: rgba(255, 123, 0, 0.663);
+}
+
 @media (max-width: 767px) {
     .contact .content .info address {
         margin: 20px auto;
     }
-}
-
-.contact .content .info .phone:nth-of-type(2) {
-    text-transform: lowercase;
 }
 
 .contact .content .info address:hover {
@@ -1535,12 +1569,18 @@ header nav .form i {
 .footer {
     padding-top: calc(var(--section-padding) / 2);
     padding-bottom: calc(var(--section-padding) / 2);
-    background-image: url(../image/pexels-jaymantri-5439.jpg);
-    background-position: top;
+    background-image: url(../image/pexels-zelch-30596249.jpg);
+    background-position: -35px 0px;
     background-size: cover;
     color: var(--first-color);
     text-align: center;
     position: relative;
+}
+
+@media(max-width: 767px) {
+    .footer {
+        background-position: -200px 45px;
+    }
 }
 
 .footer::before {
