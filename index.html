@@ -14,10 +14,11 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/main.css">
     <!-- Google Fonts: Space Grotesk -->
-    <link rel="preload" href="https://fonts.googleapis.com">
-    <link rel="preload" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+
 </head>
 
 <body>
@@ -501,8 +502,9 @@
                     <input class="main-input" type="email" name="Email" id="contact-email" placeholder="Your Email"
                         required autocomplete="email">
 
-                    <label for="country">Country</label>
-                    <select class="main-input" name="Country" id="country" required>
+                    <label for="contact-country">Country</label>
+                    <select id="contact-country" class="main-input" name="country" required autocomplete="country">
+
                         <option value="" disabled selected>Select Your Country</option>
                         <option value="Saudi Arabia">Saudi Arabia</option>
                         <option value="Egypt">Egypt</option>
@@ -524,7 +526,7 @@
                 </form>
                 <div class="info">
                     <h4><i class="fa-regular fa-hand-pointer"></i> need touch</h4>
-                    <span class="phone"><i class="fa-solid fa-phone"></i>+966(11)4010177<br></span>
+                    <span class="phone"><i class="fa-solid fa-phone"></i>+966 11 401 0177<br></span>
                     <span class="mail"><i class="fa-solid fa-at"></i><a
                             href="mailto:info@gtechcomputer.com">info@gtechcomputer.com</a></span>
 
@@ -546,15 +548,14 @@
             <p>be awake</p>
             <div class="icons">
                 <i class="fa-brands fa-google-plus-g"></i>
-                <i class="fa-brands fa-phoenix-framework"></i>
+                <i class="fa-brands fa-android"></i>
                 <i class="fa-brands fa-linkedin"></i>
-                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-google-scholar"></i>
             </div>
-            <p class="copyright">&copy; 2026 <span>G.TECH</span> All rights reserved.</p>
             <div class="deve">
-                developed with by
+                <p class="copyright">copyright &copy; 2026 <span>G.TECH</span> All rights reserved.</p>
                 <a href="https://www.linkedin.com/in/ala-esmat/" target="_blank">
-                    Alaa Esmat
+                    touched EMOO inc.
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
             </div>

@@ -28,8 +28,8 @@
 }
 
 ::selection {
-    background-color: goldenrod;
-    color: #000;
+    background-color: rgb(0, 0, 0);
+    color: var(--first-color);
 }
 
 html {
@@ -946,6 +946,10 @@ header nav .form i {
     margin-right: 30px;
     filter: grayscale(1);
     transition: filter 0.3s ease, outline 0.3s ease;
+    -webkit-border-radius: 50%;
+    /* لدعم متصفحات الموبايل القديمة */
+    overflow: hidden;
+    /* لضمان أن المحتوى لا يخرج عن الحواف المستديرة */
 }
 
 @media (max-width: 767px) {
@@ -1453,8 +1457,8 @@ header nav .form i {
 
 .contact .content form .main-input:focus {
     outline: none;
-    border-color: var(--main-color, #0867ff);
-    box-shadow: 0 0 4px 2px var(--main-color, #0867ff30);
+    border: 1px solid #0867ff;
+    box-shadow: -4px 4px 10px 5px #0867ff30;
 }
 
 .contact .content form input[type="submit"] {
@@ -1472,9 +1476,11 @@ header nav .form i {
     transition: background-color 0.2s, color 0.2s;
 }
 
-.contact .content form input[type="submit"]:hover {
-    background-color: var(--accent-yellow, #fed766);
+.contact .content form input[type="submit"]:hover,
+.contact .content form input[type="submit"]:focus {
+    background-color: #000;
     color: var(--main-color);
+    outline: none;
 }
 
 .contact .content .info {
@@ -1527,17 +1533,17 @@ header nav .form i {
 
 .contact .content .info .phone i,
 .contact .content .info .mail i {
-    color: #000;
+    color: var(--outline-color);
     margin-right: 8px;
     transition: 0.3s;
 }
 
 .contact .content .info .phone i:hover {
-    color: var(--outline-color);
+    color: #000;
 }
 
 .contact .content .info .mail i:hover {
-    color: rgba(255, 123, 0, 0.663);
+    color: rgb(255, 0, 0);
 }
 
 .contact .content .info .mail a {
@@ -1548,10 +1554,6 @@ header nav .form i {
 
 .contact .content .info .mail a:hover {
     text-decoration: underline solid black;
-}
-
-.contact .content .info .mail i:hover {
-    color: rgba(255, 123, 0, 0.663);
 }
 
 @media (max-width: 767px) {
@@ -1579,7 +1581,7 @@ header nav .form i {
 
 @media(max-width: 767px) {
     .footer {
-        background-position: -200px 45px;
+        background-position: -173px 45px;
     }
 }
 
@@ -1635,10 +1637,19 @@ header nav .form i {
     margin-right: 15px;
     cursor: pointer;
     transition: color 0.2s;
+    transition: all 0.3s;
+}
+
+.footer .container .icons i:hover {
+    transform: scale(1.2) translateY(-6px);
 }
 
 .footer .container .icons i:nth-child(1) {
     color: red;
+}
+
+.footer .container .icons i:nth-child(2) {
+    color: rgb(68, 206, 25);
 }
 
 .footer .container .icons i:nth-child(3) {
@@ -1646,14 +1657,13 @@ header nav .form i {
 }
 
 .footer .container .icons i:nth-child(4) {
-    color: #777;
+    color: rgb(255, 212, 59);
 }
 
 /* Copyright styles */
 .footer .container .copyright {
-    margin-top: 60px;
-    margin-bottom: 30px;
     cursor: default;
+    font-size: 12px;
 }
 
 .footer .container .copyright span {
@@ -1670,25 +1680,70 @@ header nav .form i {
 
 /* Developer attribution */
 .footer .container .deve {
-    font-style: italic;
-    color: #4e4e4e;
     font-weight: bold;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .footer .container .copyright {
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+
+    .footer .container .deve {
+        display: inline;
+    }
+}
+
+/* 
+How to make a border-bottom animation for a link in CSS:
+
+1. Add a border-bottom (usually set to transparent so it's invisible initially).
+2. Use the 'transition' property to animate changes to the border-bottom.
+3. On hover (or focus), change the border-bottom color to make it visible and animate the change.
+
+Example:
+*/
+.footer .container .deve p {
+    color: var(--outline-color);
 }
 
 .footer .container .deve a {
-    font-style: normal;
+    position: relative;
     color: var(--first-color);
     text-decoration: none;
     text-transform: capitalize;
-    transition: text-decoration 0.5s linear;
     margin-left: 5px;
     width: fit-content;
+    border-bottom: 2px solid transparent;
+    /* Step 1: Start with transparent border */
+    transition: border-bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1), text-decoration 0.5s linear;
+    /* Step 2: Add transition */
+}
+
+.footer .container .deve a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: var(--main-color);
+    transform: scaleX(0);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left;
+}
+
+.footer .container .deve a:hover::after {
+    transform: scaleX(1);
 }
 
 .footer .container .deve a i {
     color: #0867ff;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 /* End Fotter */
