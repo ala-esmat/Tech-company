@@ -1586,7 +1586,7 @@ header nav .form i {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 100%);
 }
 
 .footer .container {
@@ -1615,9 +1615,10 @@ header nav .form i {
 
 /* "Be awake" style */
 .footer .container>p:not(.copyright) {
-    font-size: 20px;
-    text-transform: uppercase;
-    font-weight: bold;
+    /* font-size: 20px; */
+    /* text-transform: uppercase; */
+    color: oldlace;
+    font-family: sans-serif;
     border-bottom: 3px solid var(--first-color);
     width: fit-content;
     padding: 20px;
@@ -1630,27 +1631,38 @@ header nav .form i {
     font-size: 25px;
     margin-right: 15px;
     cursor: pointer;
-    transition: color 0.2s;
     transition: all 0.3s;
+    color: #9d9d9d;
+    position: relative;
 }
+
+/* .footer .container .icons i::after {
+    content: "";
+    width: 3px;
+    height: 80%;
+    background-color: var(--first-color);
+    position: absolute;
+    top: 6px;
+    left: 1px;
+} */
 
 .footer .container .icons i:hover {
     transform: scale(1.2) translateY(-6px);
 }
 
-.footer .container .icons i:nth-child(1) {
-    color: red;
-}
-
-.footer .container .icons i:nth-child(2) {
-    color: rgb(68, 206, 25);
-}
-
-.footer .container .icons i:nth-child(3) {
+.footer .container .icons i:nth-child(1):hover {
     color: #0867ff;
 }
 
-.footer .container .icons i:nth-child(4) {
+.footer .container .icons i:nth-child(2):hover {
+    color: rgb(102, 0, 255);
+}
+
+.footer .container .icons i:nth-child(3):hover {
+    color: rgb(68, 206, 25);
+}
+
+.footer .container .icons i:nth-child(4):hover {
     color: rgb(255, 212, 59);
 }
 
@@ -1658,6 +1670,7 @@ header nav .form i {
 .footer .container .copyright {
     cursor: default;
     font-size: 12px;
+    font-weight: normal;
 }
 
 .footer .container .copyright span {
@@ -1703,6 +1716,7 @@ Example:
 */
 .footer .container .deve p {
     color: var(--outline-color);
+    font-weight: normal;
 }
 
 .footer .container .deve a {
