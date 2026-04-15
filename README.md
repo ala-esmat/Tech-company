@@ -2,7 +2,7 @@
 
 A professional, high-performance, and fully responsive corporate website built for **G-Tech**, a leading System Integrator based in Riyadh, KSA. This project showcases advanced IT infrastructure, security systems, and communication solutions.
 
-![🛜Project Preview][https://ala-esmat.github.io/G.Tech/]
+![**🛜Project Preview](https://ala-esmat.github.io/G.Tech/)
 <!-- _(Note: Replace this link with your actual screenshot path if needed)_ -->
 
 ## 🔗 Live Demo
